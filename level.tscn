@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b1lmlml3xa0id"]
+
+[ext_resource type="PackedScene" uid="uid://5j6lb28g2dve" path="res://player.tscn" id="1_u52ul"]
+[ext_resource type="PackedScene" uid="uid://dc1uqdvd4et0a" path="res://crumbling_platform.tscn" id="2_vonw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ap1m"]
+size = Vector2(1280, 64)
+
+[node name="Level" type="Node2D" unique_id=1393952118]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1815691611]
+position = Vector2(640, 680)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1627034983]
+shape = SubResource("RectangleShape2D_7ap1m")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground" unique_id=1063885001]
+position = Vector2(-4, 3)
+color = Color(0.88180333, 0.8746683, 0.971091, 1)
+texture_scale = Vector2(0.75, 0.75)
+polygon = PackedVector2Array(-640, -32, -449, -34, -439, -35, -440, 0, -440, 36, -640, 32)
+
+[node name="Player" parent="." unique_id=1235391244 instance=ExtResource("1_u52ul")]
+position = Vector2(21, 626)
+
+[node name="CrumblingPlatform" parent="." unique_id=847103420 instance=ExtResource("2_vonw3")]
+position = Vector2(303, 588)
+
+[node name="CrumblingPlatform2" parent="." unique_id=1262676575 instance=ExtResource("2_vonw3")]
+position = Vector2(548, 527)
+
+[node name="CrumblingPlatform3" parent="." unique_id=1008600248 instance=ExtResource("2_vonw3")]
+position = Vector2(823, 557)
+
+[node name="CrumblingPlatform4" parent="." unique_id=250790116 instance=ExtResource("2_vonw3")]
+position = Vector2(1063, 468)

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dc1uqdvd4et0a"]
+
+[ext_resource type="Script" uid="uid://cp28vak3h0dq7" path="res://crumbling_platform.gd" id="1_hku3q"]
+[ext_resource type="Texture2D" uid="uid://cpw6qst41pf2a" path="res://Tileset/Objects/Moving_platform/moving_platform_with_outline/double_moving_platform.png" id="2_bl0io"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ap1m"]
+size = Vector2(73.5, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty7v8"]
+size = Vector2(180, 40)
+
+[node name="CrumblingPlatform" type="StaticBody2D" unique_id=847103420]
+script = ExtResource("1_hku3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=970617282]
+position = Vector2(0.75, 0.5)
+shape = SubResource("RectangleShape2D_7ap1m")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1568855829]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=133397819]
+position = Vector2(1, -20)
+shape = SubResource("RectangleShape2D_ty7v8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1331721139]
+position = Vector2(-53, 46.000004)
+scale = Vector2(1.7187502, 1.9296875)
+
+[node name="DoubleMovingPlatform" type="Sprite2D" parent="." unique_id=148460666]
+position = Vector2(1, 0)
+scale = Vector2(2.3124998, 1.9375002)
+texture = ExtResource("2_bl0io")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=232577415]
+visible = false
+polygon = PackedVector2Array(-36, -16, -36, 0, 38, 0, 38, -16, -35, -16)
